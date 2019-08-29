@@ -2,10 +2,26 @@
 
 This is a community fork of lemurheavy/coveralls-ruby. More details to come.
 
-## Contributing
+## Installation
 
-See [CONTRIBUTING.md](https://github.com/Coveralls-Community/coveralls-ruby/blob/master/CONTRIBUTING.md).
+Globally:
+
+```shell
+gem install sequel
+```
+
+or with [Bundler](https://bundler.io/):
+
+```ruby
+# Gemfile
+
+gem 'coveralls_community', require: false
+```
 
 ## Official Documentation
 
 [Read the docs &rarr;](https://docs.coveralls.io/ruby-on-rails)
+
+## Contributing
+
+See [CONTRIBUTING.md](https://github.com/Coveralls-Community/coveralls-ruby/blob/master/CONTRIBUTING.md).

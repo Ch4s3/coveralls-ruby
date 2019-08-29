@@ -7,15 +7,15 @@ require 'coveralls/version'
 Gem::Specification.new do |gem|
   gem.authors       = ['Nick Merwin', 'Wil Gieseler']
   gem.email         = ['nick@lemurheavy.com', 'supapuerco@gmail.com']
-  gem.description   = 'A Ruby implementation of the Coveralls API.'
   gem.summary       = 'A Ruby implementation of the Coveralls API.'
+  gem.description   = 'A Ruby implementation of the Coveralls API, supported by community.'
   gem.homepage      = 'https://coveralls.io'
   gem.license       = 'MIT'
 
   gem.files         = `git ls-files`.split($OUTPUT_RECORD_SEPARATOR)
   gem.executables   = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.name          = 'coveralls'
+  gem.name          = 'coveralls_community'
   gem.require_paths = ['lib']
   gem.version       = Coveralls::VERSION
   gem.metadata = {
