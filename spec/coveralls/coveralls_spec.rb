@@ -91,10 +91,8 @@ describe Coveralls do
 
   describe '#setup!' do
     it 'sets SimpleCov adapter' do
-      SimpleCovTmp = SimpleCov
-      Object.send :remove_const, :SimpleCov
+      hide_const 'SimpleCov'
       silence { described_class.setup! }
-      SimpleCov = SimpleCovTmp
     end
   end
 end
