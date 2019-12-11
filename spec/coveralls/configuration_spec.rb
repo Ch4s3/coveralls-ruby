@@ -198,17 +198,17 @@ describe Coveralls::Configuration do
   end
 
   describe '.define_service_params_for_circleci' do
-    let(:circle_build_num) { SecureRandom.hex(4) }
+    let(:circle_workflow_id) { SecureRandom.hex(4) }
 
     before do
-      allow(ENV).to receive(:[]).with('CIRCLE_BUILD_NUM').and_return(circle_build_num)
+      allow(ENV).to receive(:[]).with('CIRCLE_WORKFLOW_ID').and_return(circle_workflow_id)
     end
 
     it 'sets the expected parameters' do
       config = {}
       described_class.define_service_params_for_circleci(config)
       expect(config[:service_name]).to eq('circleci')
-      expect(config[:service_number]).to eq(circle_build_num)
+      expect(config[:service_number]).to eq(circle_workflow_id)
     end
   end
 

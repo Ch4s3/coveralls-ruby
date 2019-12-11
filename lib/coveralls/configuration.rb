@@ -68,7 +68,7 @@ module Coveralls
 
       def define_service_params_for_circleci(config)
         config[:service_name]         = 'circleci'
-        config[:service_number]       = ENV['CIRCLE_BUILD_NUM']
+        config[:service_number]       = ENV['CIRCLE_WORKFLOW_ID']
         config[:service_pull_request] = (ENV['CI_PULL_REQUEST'] || '')[/(\d+)$/, 1]
         config[:parallel]             = ENV['CIRCLE_NODE_TOTAL'].to_i > 1
         config[:service_job_number]   = ENV['CIRCLE_NODE_INDEX']
@@ -227,7 +227,7 @@ module Coveralls
 
       def circleci_env_hash
         {
-          circleci_build_num: ENV['CIRCLE_BUILD_NUM'],
+          circleci_build_num: ENV['CIRCLE_WORKFLOW_ID'],
           branch:             ENV['CIRCLE_BRANCH'],
           commit_sha:         ENV['CIRCLE_SHA1']
         }
